@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced Tic-Tac-Toe Game</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Rules Card -->
+    <div class="card" id="mainrules">
+        <h1>Advanced Tic-Tac-Toe — Rules</h1>
+
+        <div class="grid">
+
+            <!-- Rules Section -->
+            <section class="rules">
+
+                <h2>Objective</h2>
+                <p>
+                    Win the <strong>big board</strong> (the 3×3 of 3×3 boards) by claiming three big boxes in a row
+                    horizontally, vertically, or diagonally.
+                </p>
+
+                <h2>Setup</h2>
+                <ul>
+                    <li>The board contains 9 <em>big boxes</em>, each a 3×3 grid of small cells (buttons).</li>
+                    
+                </ul>
+
+                <h2>Turn rules</h2>
+                <ul>
+                    <li>Players must play inside the currently <strong>highlighted</strong> big box.</li>
+                    <li>
+                        If you play in the <em>k</em>-th small cell, you send your opponent to big box <em>k</em>.
+                    </li>
+                    <li>
+                        If the destination big box is already won or full, the opponent may play in <strong>any open
+                            big box</strong>.
+                    </li>
+                </ul>
+
+                <h2>Winning a small (inner) board</h2>
+                <ul>
+                    <li>Getting 3 in a row inside a big box wins that box.</li>
+                    <li>The big box becomes closed and replaced by the winner’s symbol.</li>
+                </ul>
+
+                <h2>Winning the big board</h2>
+                <ul>
+                    <li>Three won big boxes in a row → you win the entire game.</li>
+                    <li>If all big boxes are taken but no row is formed → draw.</li>
+                </ul>
+
+            </section>
+
+            <!-- Sidebar -->
+            <aside class="sidebar">
+                
+
+                <button id="okbutton">OK</button>
+            </aside>
+
+        </div>
+    </div>
+
+    <!-- Game UI -->
+    <div class="everythingbutrules hidden" id="mainboard" >
+
+        <!-- Winner Display -->
+        <div class="winnerdiv">
+            <p id="winner">Winner is</p>
+        </div>
+
+
+        <!-- Main Game Board -->
+        <main>
+            <h1>Advanced Tic-Tac-Toe</h1>
+
+            <div class="container">
+                <div class="game">
+
+                    <!-- 9 Big Boxes -->
+                    <!-- Each big box contains 9 buttons -->
+                    <!-- Classes zero..eight correspond to index 0-8 -->
+                    <!-- Repeated structure kept intact -->
+
+                    <!-- Big Box Template Repeated 9 Times -->
+                    <div class="big-box zero highlight">
+                        <button class="box zero buttondisabled"></button>
+                        <button class="box one buttondisabled"></button>
+                        <button class="box two buttondisabled"></button>
+                        <button class="box three buttondisabled"></button>
+                        <button class="box four buttondisabled"></button>
+                        <button class="box five buttondisabled"></button>
+                        <button class="box six buttondisabled"></button>
+                        <button class="box seven buttondisabled"></button>
+                        <button class="box eight buttondisabled"></button>
+                    </div>
+
+                    <!-- Big Boxes 1–8 Below -->
+                    <div class="big-box one highlight">
+                        <button class="box zero buttondisabled"></button>
+                        <button class="box one buttondisabled"></button>
+                        <button class="box two buttondisabled"></button>
+                        <button class="box three buttondisabled"></button>
+                        <button class="box four buttondisabled"></button>
+                        <button class="box five buttondisabled"></button>
+                        <button class="box six buttondisabled"></button>
+                        <button class="box seven buttondisabled"></button>
+                        <button class="box eight buttondisabled"></button>
+                    </div>
+
+                    <div class="big-box two highlight">
+                        <button class="box zero buttondisabled"></button>
+                        <button class="box one buttondisabled"></button>
+                        <button class="box two buttondisabled"></button>
+                        <button class="box three buttondisabled"></button>
+                        <button class="box four buttondisabled"></button>
+                        <button class="box five buttondisabled"></button>
+                        <button class="box six buttondisabled"></button>
+                        <button class="box seven buttondisabled"></button>
+                        <button class="box eight buttondisabled"></button>
+                    </div>
+
+                    <div class="big-box three highlight">
+                        <button class="box zero buttondisabled"></button>
+                        <button class="box one buttondisabled"></button>
+                        <button class="box two buttondisabled"></button>
+                        <button class="box three buttondisabled"></button>
+                        <button class="box four buttondisabled"></button>
+                        <button class="box five buttondisabled"></button>
+                        <button class="box six buttondisabled"></button>
+                        <button class="box seven buttondisabled"></button>
+                        <button class="box eight buttondisabled"></button>
+                    </div>
+
+                    <div class="big-box four highlight">
+                        <button class="box zero buttondisabled"></button>
+                        <button class="box one buttondisabled"></button>
+                        <button class="box two buttondisabled"></button>
+                        <button class="box three buttondisabled"></button>
+                        <button class="box four buttondisabled"></button>
+                        <button class="box five buttondisabled"></button>
+                        <button class="box six buttondisabled"></button>
+                        <button class="box seven buttondisabled"></button>
+                        <button class="box eight buttondisabled"></button>
+                    </div>
+
+                    <div class="big-box five highlight">
+                        <button class="box zero buttondisabled"></button>
+                        <button class="box one buttondisabled"></button>
+                        <button class="box two buttondisabled"></button>
+                        <button class="box three buttondisabled"></button>
+                        <button class="box four buttondisabled"></button>
+                        <button class="box five buttondisabled"></button>
+                        <button class="box six buttondisabled"></button>
+                        <button class="box seven buttondisabled"></button>
+                        <button class="box eight buttondisabled"></button>
+                    </div>
+
+                    <div class="big-box six highlight">
+                        <button class="box zero buttondisabled"></button>
+                        <button class="box one buttondisabled"></button>
+                        <button class="box two buttondisabled"></button>
+                        <button class="box three buttondisabled"></button>
+                        <button class="box four buttondisabled"></button>
+                        <button class="box five buttondisabled"></button>
+                        <button class="box six buttondisabled"></button>
+                        <button class="box seven buttondisabled"></button>
+                        <button class="box eight buttondisabled"></button>
+                    </div>
+
+                    <div class="big-box seven highlight">
+                        <button class="box zero buttondisabled"></button>
+                        <button class="box one buttondisabled"></button>
+                        <button class="box two buttondisabled"></button>
+                        <button class="box three buttondisabled"></button>
+                        <button class="box four buttondisabled"></button>
+                        <button class="box five buttondisabled"></button>
+                        <button class="box six buttondisabled"></button>
+                        <button class="box seven buttondisabled"></button>
+                        <button class="box eight buttondisabled"></button>
+                    </div>
+
+                    <div class="big-box eight highlight">
+                        <button class="box zero buttondisabled"></button>
+                        <button class="box one buttondisabled"></button>
+                        <button class="box two buttondisabled"></button>
+                        <button class="box three buttondisabled"></button>
+                        <button class="box four buttondisabled"></button>
+                        <button class="box five buttondisabled"></button>
+                        <button class="box six buttondisabled"></button>
+                        <button class="box seven buttondisabled"></button>
+                        <button class="box eight buttondisabled"></button>
+                    </div>
+
+                </div>
+            </div>
+        </main>
+
+        <div class="resetcontainer">
+            <button id="reset-btn">Reset</button>
+        </div>
+
+    </div>
+
+    <!-- Scripts -->
+    <script src="function.js"></script>
+    <script src="app.js"></script>
+
+</body>
+</html>

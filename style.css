@@ -1,0 +1,206 @@
+*{
+    margin:0;
+    padding:0;
+}
+body{
+    background-color: #548687;
+    text-align: center;
+    justify-content:  center;
+}
+
+.container{
+    padding-top: 2rem;
+    justify-content: center;
+    height: 70vmin;
+}
+
+.game {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    width: 450px;
+    padding-left: 32.5%;
+    /* margin: auto; */
+}
+
+/* Each big box becomes a 3×3 small grid */
+.big-box {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 5px;
+    padding: 10px;
+    border: none;
+    border-radius: 1rem;
+    box-shadow: 0 0 1rem rgba(0,0,0,0.3);
+    background: #b0413e;
+}
+
+/* Small tic-tac-toe buttons */
+.box {
+    
+    width: 40px;
+    height: 40px;
+    font-size: 20px;
+    font-weight: bold;
+    border: none;
+    border-radius: 0.4rem;
+    box-shadow: 0 0 1rem rgba(0,0,0,0.3);
+    background: #ffffc7;
+}
+
+.newboxadder{
+    
+    
+    width: 40px;
+    height: 40px;
+    font-size: 20px;
+    font-weight: bold;
+    border: none;
+    border-radius: 0.4rem;
+    box-shadow: 0 0 1rem rgba(0,0,0,0.3);
+    background: #ffffc7;
+
+}
+
+.highlight{
+    background: rgb(23, 94, 202) ;
+}
+
+.blur {
+    filter: blur(2px);
+    pointer-events: none; /* optional: prevents clicking blurred area */
+}
+
+.X_Y-style {
+    color: #000000;       
+    font-size: 6rem;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.won-box {
+    display: flex ;
+    justify-content: center;
+    align-items: center;
+    background: #ffdd88;
+}
+
+.winner-symbol {
+    font-size: 4rem;
+    font-weight: bold;
+}
+
+
+.buttondisabled {
+    pointer-events: none;   /* makes it unclickable */
+    /* cursor: not-allowed; */
+}
+
+.blue {
+    background-color: lightblue;
+}
+
+.winnerdiv {   /* your requested color */
+    padding: 12px 10px;
+    
+    border-radius: 10px;
+
+}
+
+#winner {
+    font-size: 40px;
+    font-weight: bold;
+    color: #ffffc7;                 /* dark text for contrast */
+    margin: 0;
+}
+
+
+
+.hidden{
+    display: none;
+}
+
+#reset-btn{
+    padding: 1rem;
+    font-size: 1.25 rem;
+    background-color: #191913;
+    color: #fff;
+    border-radius: 1rem;
+    border : none;
+}
+
+#newgame-btn,#okbutton{
+    padding: 1rem;
+    font-size: 1.25 rem;
+    background-color: #191913;
+    color: #fff;
+    border-radius: 1rem;
+    border : none;
+}
+
+.resetcontainer{
+    padding:1.5rem;
+}
+
+.displays{
+    display: none;
+}
+
+
+
+/* for rules */
+
+.show{
+    display: block;
+}
+
+h1 {
+    text-align: center;
+    font-size: 2.4rem;
+    margin-bottom: 20px;
+    color: #ffd95a;
+}
+
+/* ---------- Section headers ---------- */
+h2 {
+    font-size: 1.8rem;
+    margin-top: 30px;
+    color: #ffea9b;
+    padding-left: 10px;
+}
+
+/* ---------- Paragraphs and lists ---------- */
+p {
+    font-size: 1.1rem;
+}
+
+ul {
+    /* margin-left: 20px; */
+}
+
+li {
+    margin-bottom: 10px;
+    font-size: 1.05rem;
+}
+
+/* ---------- Highlight boxes ---------- */
+.rule-box {
+    background: #2c2c2c;
+    padding: 15px;
+    border-radius: 8px;
+    margin: 20px 0;
+}
+
+.rule-box strong {
+    color: #ffe07c;
+}
+
+/* ---------- Footer ---------- */
+footer {
+    margin-top: 40px;
+    text-align: center;
+    font-size: 0.9rem;
+    color: #bbbbbb;
+}
